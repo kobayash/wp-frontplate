@@ -1,5 +1,5 @@
 {
-  "name": "wp-frontplate",
+  "name": "wp-frontplate-forked",
   "version": "1.0.3",
   "description": "Wordpress開発の効率をあげるフルスタックテンプレート",
   "dependencies": {},
@@ -19,9 +19,6 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:frontainer/frontplate.git"
-  },
-  "frp": {
-    "WordPress/WordPress": "wp"
   },
   "author": "frontainer",
   "license": "MIT",
