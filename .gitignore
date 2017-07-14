@@ -6,3 +6,4 @@ public
 guide
 /wp
 !/wp/wp-content/themes/.keep
+.env
