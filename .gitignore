@@ -3,6 +3,6 @@
 .DS_Store
 node_modules
 public
-wp/assets
-wp/static
 guide
+/wp
+!/wp/wp-content/themes/.keep
