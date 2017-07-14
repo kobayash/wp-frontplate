@@ -20,7 +20,12 @@ if [ ! -f ${WP_ROOT}/wp-config.local.php ]; then
 		--dbhost=mysql \
 		--dbprefix=${WP_DB_PREFIX} \
 		--skip-salts \
-		--skip-check
+		--skip-check \
+		--extra-php <<PHP
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_DISPLAY', false );
+define( 'WP_DEBUG_LOG', true );
+PHP
 
 	# remove actual directory
 	#rm -rf ${WP_ROOT}/wp-content/themes
@@ -67,9 +72,7 @@ fi
 (cd ${WP_ROOT} && ln -s wp-config.local.php wp-config.php)
 
 # Make symlinks to plugins and themes again
-#rm -rf ${WP_ROOT}/wp-content/themes
 rm -rf ${WP_ROOT}/wp-content/plugins
-#(cd ${WP_ROOT}/wp-content && ln -s /wordpress/themes themes)
 (cd ${WP_ROOT}/wp-content && ln -s /wordpress/plugins plugins)
 
 /usr/sbin/php-fpm7.0 -F

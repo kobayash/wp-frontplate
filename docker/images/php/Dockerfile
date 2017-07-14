@@ -1,7 +1,7 @@
 FROM ubuntu:rolling
 
 RUN apt-get update
-RUN apt-get install -y curl git php7.0-fpm php7.0-curl php7.0-mysql php7.0-xml php7.0-opcache php7.0-intl php7.0-mbstring php-xdebug
+RUN apt-get install -y curl git php7.0-fpm php7.0-curl php7.0-mysql php7.0-xml php7.0-opcache php7.0-intl php7.0-gd php7.0-mbstring php-xdebug
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # php.ini - /etc/php/7.0/fpm/php.ini
@@ -22,7 +22,6 @@ COPY ./vendor/wait-for-it.sh /
 RUN chmod +x /wait-for-it.sh
 
 RUN mkdir /wordpress
-#RUN mkdir /wordpress/themes
 RUN mkdir /wordpress/plugins
 
 COPY ./docker-entrypoint.sh /
