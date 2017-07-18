@@ -1,6 +1,6 @@
-FROM ubuntu:rolling
+FROM ubuntu:latest
 
-RUN apt-get update
+RUN apt-get update --fix-missing
 RUN apt-get install -y curl git php7.0-fpm php7.0-curl php7.0-mysql php7.0-xml php7.0-opcache php7.0-intl php7.0-gd php7.0-mbstring php-xdebug
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
