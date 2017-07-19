@@ -39,9 +39,20 @@ PHP
 
     # Install and activate plugins
 
+    # Delete plugin
+    if $(wp plugin is-installed hello --path=${WP_ROOT} --allow-root); then
+      wp plugin delete hello --path=${WP_ROOT} --allow-root
+    fi
+
+    # Activate plugin
+    if $(wp plugin is-installed wp-multibyte-patch --path=${WP_ROOT} --allow-root); then
+      wp plugin activate wp-multibyte-patch --path=${WP_ROOT} --allow-root
+    fi
+
     # Activate theme
     wp theme activate ${WP_CURRENT_THEME} --path=${WP_ROOT} --allow-root
 
+    # Delete theme
     if $(wp theme is-installed twentyfifteen --path=${WP_ROOT} --allow-root); then
       wp theme delete twentyfifteen --path=${WP_ROOT} --allow-root
     fi
