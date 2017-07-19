@@ -21,9 +21,6 @@ COPY pool.d/www.conf /etc/php/7.0/fpm/pool.d/www.conf
 COPY ./vendor/wait-for-it.sh /
 RUN chmod +x /wait-for-it.sh
 
-RUN mkdir /wordpress
-RUN mkdir /wordpress/plugins
-
 COPY ./docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]

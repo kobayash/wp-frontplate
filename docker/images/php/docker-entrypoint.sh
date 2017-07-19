@@ -27,14 +27,6 @@ define( 'WP_DEBUG_DISPLAY', false );
 define( 'WP_DEBUG_LOG', true );
 PHP
 
-	# remove actual directory
-	#rm -rf ${WP_ROOT}/wp-content/themes
-	rm -rf ${WP_ROOT}/wp-content/plugins
-
-	# make symlinks to plugins and themes
-	#(cd ${WP_ROOT}/wp-content && ln -s /wordpress/themes themes)
-	(cd ${WP_ROOT}/wp-content && ln -s /wordpress/plugins plugins)
-
   if ! $(wp core is-installed --path=${WP_ROOT} --allow-root); then
     # Install core
     wp core install --path=${WP_ROOT} --allow-root \
@@ -70,9 +62,5 @@ fi
 
 # Finally, make a symlink to wp-config
 (cd ${WP_ROOT} && ln -s wp-config.local.php wp-config.php)
-
-# Make symlinks to plugins and themes again
-rm -rf ${WP_ROOT}/wp-content/plugins
-(cd ${WP_ROOT}/wp-content && ln -s /wordpress/plugins plugins)
 
 /usr/sbin/php-fpm7.0 -F
