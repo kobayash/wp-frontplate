@@ -4,9 +4,10 @@ var PACKAGE = require('./package.json');
 
 // https://github.com/frontainer/frontplate-cli/wiki/6.%E8%A8%AD%E5%AE%9A
 module.exports = function (production) {
-  global.THEME_NAME = 'sampletheme';
-  global.FRP_SRC  = 'src/' + THEME_NAME;
-  global.FRP_DEST = 'wp/wp-content/themes/' + THEME_NAME;
+  global.THEME_NAME   = 'Sample Theme';
+  global.THEME_DOMAIN = 'sampletheme';
+  global.FRP_SRC  = 'src/' + THEME_DOMAIN;
+  global.FRP_DEST = 'wp/wp-content/themes/' + THEME_DOMAIN;
   return {
     clean: {
     },
@@ -14,8 +15,9 @@ module.exports = function (production) {
       src: `${FRP_SRC}/view/*.{svg,html,php,css}`,   // 読み込むビューファイル
       dest: FRP_DEST,        // 出力先
       params: {                   // ビューで使うグローバル変数
-        name: PACKAGE.name,
-        version: PACKAGE.version
+        name: THEME_NAME,
+        version: PACKAGE.version,
+        domain: THEME_DOMAIN
       },
       ext: null,        // 出力する際の拡張子
       // １つのテンプレートで複数作成するときに使用する
@@ -36,7 +38,8 @@ module.exports = function (production) {
       proxy: 'localhost'
     },
     copy: {
-      [`${FRP_SRC}/view/inc/*`]: `${FRP_DEST}/inc/`
+      [`${FRP_SRC}/view/inc/*`]: `${FRP_DEST}/inc/`,
+      [`${FRP_SRC}/view/screenshot.png`]: `${FRP_DEST}/`
     },
     sprite: [],
     test: {}

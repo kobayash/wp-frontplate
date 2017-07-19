@@ -1,6 +1,6 @@
-# wp-frontplate
+# wordpress-frontplate
 
-フロントエンド開発の効率を上げるテンプレートのWordpress版
+フロントエンド開発の効率を上げるテンプレートのWordpress版の派生版です。
 
 [CHANGELOG](https://github.com/frontainer/wp-frontplate/blob/master/CHANGELOG.md)
 
@@ -24,3 +24,14 @@ and
 
 `$ docker-compose exec mysql bash -c 'mysqldump -uroot -p$MYSQL_ROOT_PASSWORD -hlocalhost -B $MYSQL_DATABASE -v -r /docker-entrypoint-initdb.d/dump.sql && gzip -9vf /docker-entrypoint-initdb.d/dump.sql'
  `
+
+## Changelog
+
+### Dependence
+
+* [conventional-changelog-cli](https://www.npmjs.com/package/conventional-changelog-cli) Require global option.
+
+### Create changelog
+
+`$ npm run changelog`
+

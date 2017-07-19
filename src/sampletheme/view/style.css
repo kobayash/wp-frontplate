@@ -1,5 +1,5 @@
 /*
-Theme Name: Sample Theme
+Theme Name: <%= name %>
 Version: <%= version %>
-Text Domain: sampletheme
+Text Domain: <%= domain %>
 */

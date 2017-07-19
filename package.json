@@ -1,7 +1,7 @@
 {
   "name": "wp-frontplate-forked",
-  "version": "1.0.4",
-  "description": "Wordpress開発の効率をあげるフルスタックテンプレート",
+  "version": "0.0.0",
+  "description": "WordPress Site Template for frontplate-cli",
   "dependencies": {},
   "devDependencies": {
     "npm-run-all": "^3.1.0"
@@ -16,11 +16,5 @@
     "production": "frp build -p",
     "changelog": "conventional-changelog -p eslint -i CHANGELOG.md -w -s -r 0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:frontainer/frontplate.git"
-  },
-  "author": "frontainer",
-  "license": "MIT",
   "private": true
 }
