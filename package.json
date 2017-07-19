@@ -1,6 +1,6 @@
 {
   "name": "wp-frontplate-forked",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Wordpress開発の効率をあげるフルスタックテンプレート",
   "dependencies": {},
   "devDependencies": {
